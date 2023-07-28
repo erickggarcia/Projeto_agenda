@@ -37,12 +37,6 @@ class Contact {
     this.contato = null;
   }
 
-  static async buscaPorId(id) {
-    if (typeof id !== "string") return;
-    const contato = await ContactModel.findById(id);
-    return contato;
-  }
-
   async register() {
     this.valida();
     if (this.errors.length > 0) return;
@@ -77,6 +71,33 @@ class Contact {
       telefone: this.body.telefone,
       email: this.body.email,
     };
+  }
+
+  async edit(id) {
+    if (typeof id !== "string") return;
+    this.valida();
+    if (this.errors.length > 0) return;
+    this.contato = await ContactModel.findByIdAndUpdate(id, this.body, {
+      new: true,
+    });
+  }
+
+  static async buscaPorId(id) {
+    if (typeof id !== "string") return;
+    const contato = await ContactModel.findById(id);
+    return contato;
+  }
+
+  static async buscaContato() {
+    const contatos = await ContactModel.find().sort({ createdAt: -1 });
+    return contatos;
+  }
+
+  static async delete(id) {
+    if (typeof id !== "string") return;
+
+    const contato = await ContactModel.findOneAndDelete({ _id: id });
+    return contato;
   }
 }
 
