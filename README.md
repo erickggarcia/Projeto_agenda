@@ -3,10 +3,9 @@ Foi utilizado o mongodb e seus respectivos frameworks de gerenciamento, como o m
 
 
 O projeto em questão tem as seguintes responsabilidades:
-
--Criação de usuário (caso o mesmo não exista); \n
--Login de usuário (caso o mesmo exista); \n
--Caso o usuário esteja logado ele terá as permissões necessárias para realizar as seguintes ações: /n
-    -Cadastro de um contato; /n
-    -Atualização de um contato; /n
-    -Deleção do contato. /n
+-Criação de usuário (caso o mesmo não exista); <br/>
+-Login de usuário (caso o mesmo exista); <br/>
+-Caso o usuário esteja logado ele terá as permissões necessárias para realizar as seguintes ações: <br/>
+    -Cadastro de um contato; <br/>
+    -Atualização de um contato; <br/>
+    -Deleção do contato. <br/>
